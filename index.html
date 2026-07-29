@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A&amp;T Consultant Limited｜開公司・會計・報稅一站式服務</title>
+<meta name="description" content="A&T Consultant 提供香港有限公司註冊、會計理帳、利得稅報稅、公司秘書等一站式服務。WhatsApp 即時報價，收費透明，中英雙語跟進。">
+<style>
+  :root{
+    --navy:#1a1a1a;       /* 深色 section（hero／收費）：炭黑 */
+    --navy-deep:#101010;  /* 更深：footer */
+    --gold:#c9a227;       /* 品牌 accent：金（eyebrow／highlight／✓／裝飾） */
+    --gold-soft:#f4ecd6;  /* icon 底色：淺金 */
+    --ink:#1a1a1a;        /* 主要文字：近黑 */
+    --muted:#6b7280;
+    --bg:#f6f6f7;
+    --card:#ffffff;
+    --wa:#25d366;         /* WhatsApp 綠：全站唯一 accent color */
+    --radius:14px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang HK","PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.7;
+  }
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid #e6e9ee;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-weight:800;font-size:1.15rem;color:var(--navy);letter-spacing:.02em;}
+  .logo .amp{color:var(--gold);}
+  .logo small{display:block;font-size:.62rem;font-weight:500;color:var(--muted);letter-spacing:.14em;}
+  .nav-links{display:flex;gap:26px;font-size:.92rem;color:var(--muted);}
+  .nav-links a:hover{color:var(--navy);}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 20px;border-radius:999px;
+    font-weight:700;font-size:.95rem;
+    white-space:nowrap;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 4px 14px rgba(37,211,102,.35);}
+  .btn-ghost{border:1.5px solid var(--navy);color:var(--navy);}
+  .btn-gold{background:var(--wa);color:#fff;box-shadow:0 4px 14px rgba(37,211,102,.3);}
+  .nav .btn-wa{padding:8px 16px;font-size:.88rem;}
+
+  /* ===== Hero ===== */
+  .hero{
+    background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 70%);
+    color:#fff;
+    padding:76px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;
+    width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle,rgba(201,162,39,.18),transparent 65%);
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .hero .tag{
+    display:inline-block;background:rgba(201,162,39,.12);color:var(--gold);
+    border:1px solid rgba(201,162,39,.4);
+    padding:4px 14px;border-radius:999px;font-size:.82rem;font-weight:600;
+    margin-bottom:20px;letter-spacing:.05em;
+  }
+  .hero h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:800;line-height:1.35;margin-bottom:18px;}
+  .hero h1 em{font-style:normal;color:var(--gold);}
+  .hero p{color:#c3cfdb;font-size:1.05rem;max-width:560px;margin-bottom:32px;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .hero .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff;}
+
+  /* ===== Trust strip ===== */
+  .trust{background:var(--card);border-bottom:1px solid #e6e9ee;}
+  .trust .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:10px;padding:20px;text-align:center;
+  }
+  .trust b{display:block;color:var(--navy);font-size:.95rem;}
+  .trust span{font-size:.8rem;color:var(--muted);}
+
+  /* ===== Sections ===== */
+  section{padding:64px 0;}
+  .sec-head{text-align:center;margin-bottom:40px;}
+  .sec-head .eyebrow{color:var(--gold);font-weight:700;font-size:.85rem;letter-spacing:.18em;}
+  .sec-head h2{font-size:clamp(1.5rem,3.5vw,2.1rem);color:var(--navy);font-weight:800;margin-top:6px;}
+  .sec-head p{color:var(--muted);margin-top:8px;font-size:.95rem;}
+
+  /* Services */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:var(--card);border-radius:var(--radius);
+    padding:26px 24px;border:1px solid #e9ecf1;
+    box-shadow:0 2px 10px rgba(15,42,67,.04);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(15,42,67,.09);}
+  .card .icon{
+    width:46px;height:46px;border-radius:12px;
+    background:var(--gold-soft);color:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .card .icon svg{
+    width:23px;height:23px;
+    fill:none;stroke:#1a1a1a;stroke-width:1.6;
+    stroke-linecap:round;stroke-linejoin:round;
+  }
+  .card h3{color:var(--navy);font-size:1.05rem;margin-bottom:8px;}
+  .card p{font-size:.9rem;color:var(--muted);}
+
+  /* Pricing */
+  #pricing{background:var(--navy);color:#fff;}
+  #pricing .sec-head h2{color:#fff;}
+  #pricing .sec-head p{color:#b9c6d4;}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .price-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);padding:28px 24px;text-align:center;
+  }
+  .price-card.hot{background:rgba(201,162,39,.10);border-color:var(--gold);}
+  .price-card .plan{font-weight:700;font-size:1rem;color:var(--gold);letter-spacing:.02em;}
+  .price-card .amount{font-size:1.9rem;font-weight:800;margin:10px 0 2px;}
+  .price-card .amount small{font-size:.85rem;font-weight:500;color:#b9c6d4;}
+  .price-card ul{list-style:none;margin:16px 0 22px;font-size:.88rem;color:#d7dfe7;text-align:left;}
+  .price-card li{padding:5px 0 5px 24px;position:relative;}
+  .price-card li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:700;}
+  .price-note{text-align:center;margin-top:22px;font-size:.82rem;color:#93a5b6;}
+
+  /* Process steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .step{
+    background:var(--card);border:1px solid #e9ecf1;border-radius:var(--radius);
+    padding:28px 24px;box-shadow:0 2px 10px rgba(15,42,67,.04);
+  }
+  .step .num{
+    font-size:1.9rem;font-weight:800;color:var(--gold);
+    line-height:1;margin-bottom:14px;letter-spacing:.02em;
+  }
+  .step h3{color:var(--ink);font-size:1.02rem;margin-bottom:8px;}
+  .step p{font-size:.9rem;color:var(--muted);}
+
+  /* Compare table */
+  .cmp-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:0 2px 10px rgba(15,42,67,.05);}
+  .cmp{
+    width:100%;min-width:600px;border-collapse:collapse;
+    background:var(--card);font-size:.92rem;
+  }
+  .cmp th{
+    background:var(--navy);color:#fff;padding:14px 16px;text-align:left;
+    font-size:.95rem;letter-spacing:.02em;
+  }
+  .cmp th:nth-child(2){color:var(--gold);}
+  .cmp td{padding:13px 16px;border-top:1px solid #edf0f4;color:var(--muted);vertical-align:top;}
+  .cmp td:first-child{font-weight:700;color:var(--ink);white-space:nowrap;}
+  .cmp td:nth-child(2){background:rgba(201,162,39,.05);}
+  .cmp-note{font-size:.8rem;color:var(--muted);margin-top:14px;text-align:center;}
+
+  /* Why us */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .why-grid .card{text-align:center;}
+  .why-grid .icon{margin:0 auto 14px;}
+
+  /* FAQ */
+  .faq{max-width:760px;margin:0 auto;}
+  details{
+    background:var(--card);border:1px solid #e9ecf1;border-radius:var(--radius);
+    margin-bottom:12px;overflow:hidden;
+  }
+  summary{
+    cursor:pointer;padding:18px 22px;font-weight:700;color:var(--navy);
+    list-style:none;display:flex;justify-content:space-between;align-items:center;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"＋";color:var(--gold);font-weight:400;font-size:1.2rem;transition:transform .2s;}
+  details[open] summary::after{transform:rotate(45deg);}
+  details .body{padding:0 22px 18px;color:var(--muted);font-size:.93rem;}
+
+  /* CTA band */
+  .cta-band{
+    background:linear-gradient(135deg,#1e1e1e 0%,#2f2f2f 100%);
+    border-radius:20px;padding:44px 36px;text-align:center;color:#fff;
+    border:1px solid #333;
+  }
+  .cta-band h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;margin-bottom:10px;}
+  .cta-band p{margin-bottom:24px;font-size:.98rem;color:#c4c4c4;}
+  .cta-band .btn{background:var(--wa);color:#fff;box-shadow:0 6px 18px rgba(37,211,102,.35);}
+
+  /* Footer */
+  footer{background:var(--navy-deep);color:#8fa2b5;padding:36px 0;font-size:.83rem;}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  footer .fine{max-width:520px;}
+
+  /* Floating WhatsApp */
+  .wa-float{
+    position:fixed;right:22px;bottom:22px;z-index:99;
+    width:58px;height:58px;border-radius:50%;
+    background:var(--wa);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 22px rgba(37,211,102,.45);
+    transition:transform .15s ease;
+  }
+  .wa-float:hover{transform:scale(1.08);}
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+
+  @media (max-width:820px){
+    .nav-links{display:none;}
+    .logo small{display:none;}
+    .nav .btn-wa{padding:8px 14px;font-size:.82rem;}
+    .grid,.price-grid,.steps{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px;}
+    section{padding:48px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">A<span class="amp">&amp;</span>T Consultant<small>ACCOUNTING · CORPORATE SERVICES</small></a>
+    <nav class="nav-links">
+      <a href="#services">服務範圍</a>
+      <a href="#pricing">收費</a>
+      <a href="#why">我們的優勢</a>
+      <a href="#faq">常見問題</a>
+    </nav>
+    <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener">WhatsApp 查詢</a>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <span class="tag">中小企・初創・自由工作者之選</span>
+    <h1>開公司、會計、報稅<br><em>一個 WhatsApp</em> 全程辦妥</h1>
+    <p>毋須聘請全職會計，毋須追趕報稅 Deadline。A&amp;T 為你處理公司註冊、日常帳目及稅務申報，全程 WhatsApp 專人跟進，有問必答。</p>
+    <div class="hero-cta">
+      <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener">立即免費報價</a>
+      <a class="btn btn-ghost" href="#services">查看服務範圍</a>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div><b>極速回覆</b><span>辦公時間內即時回覆</span></div>
+    <div><b>收費透明</b><span>報價清晰，絕無隱藏收費</span></div>
+    <div><b>中英雙語</b><span>粵語・普通話・English</span></div>
+    <div><b>全程網上</b><span>文件拍照傳送即可</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">SERVICES</div>
+      <h2>一站式公司後勤服務</h2>
+      <p>由公司成立到每年報稅，一個 WhatsApp 全程支援</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 21V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v17"/><path d="M16 9h3a1 1 0 0 1 1 1v11"/><path d="M3 21h18"/><path d="M8.5 7h2M12 7h1.5M8.5 11h2M12 11h1.5M8.5 15h2M12 15h1.5"/></svg></div>
+        <h3>有限公司註冊</h3>
+        <p>公司名稱查冊、擬備及遞交文件、領取註冊證書及商業登記證，最快一星期完成。</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v18H6a2 2 0 0 1-2-2V5z"/><path d="M8 3v18"/><path d="M12 8h4M12 12h4"/></svg></div>
+        <h3>會計理帳</h3>
+        <p>按月或按年整理帳目，單據發票拍照傳送即可，年結時帳目清晰齊備。</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4"/><path d="M9 12h6M9 16h6"/><path d="M9 8h2"/></svg></div>
+        <h3>利得稅・薪俸稅報稅</h3>
+        <p>計算稅款、填報及準時遞交報稅表，緊貼每個 Deadline 免受罰款，並提示可申請的免稅額。</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg></div>
+        <h3>公司秘書服務</h3>
+        <p>提供周年申報表、董事及股東變更、法定紀錄冊，全面符合《公司條例》要求。服務由同系持牌 TCSP 機構提供。</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6"/><path d="M5 9v9M9.5 9v9M14.5 9v9M19 9v9"/><path d="M3 18h18M3 21h18"/></svg></div>
+        <h3>開戶＆商業登記協助</h3>
+        <p>協助準備開戶文件、預約及跟進，傳統銀行及虛擬銀行均有經驗。</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-2.9 8.1-7 10-4.1-1.9-7-5.4-7-10V6l7-3z"/><path d="M9 11.5l2 2 4-4"/></svg></div>
+        <h3>審計安排</h3>
+        <p>年度審計由合作執業會計師處理，收費實惠，流程暢順，配合報稅一站式完成。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" style="background:var(--card);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">PROCESS</div>
+      <h2>開公司，三步完成</h2>
+      <p>全程網上辦理，毋須親身到場</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <h3>WhatsApp 免費諮詢</h3>
+        <p>告知屬意的公司名稱及業務性質，我們會即時回覆報價，並免費查冊確認名稱可用。</p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>網上簽署文件</h3>
+        <p>所有註冊文件由我們擬備，你只需提供董事及股東身份證副本與住址證明，電子簽署即可完成。</p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>領取證書，正式開業</h3>
+        <p>最快一星期，公司註冊證書及商業登記證一併交付，隨即可開立銀行戶口，正式營運。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">COMPARE</div>
+      <h2>開有限定無限公司好？</h2>
+      <p>一分鐘看清分別 — 未有頭緒？歡迎 WhatsApp 查詢，按你的情況給予建議</p>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <tr><th style="width:22%;">項目</th><th>有限公司</th><th>無限公司</th></tr>
+        <tr><td>法律地位</td><td>獨立法人，公司與個人資產分開</td><td>東主與業務屬同一實體</td></tr>
+        <tr><td>債務責任</td><td>股東責任以出資額為限</td><td>無限責任，須以個人資產承擔業務債務</td></tr>
+        <tr><td>利得稅率</td><td>首 200 萬利潤 8.25%，其後 16.5%</td><td>首 200 萬利潤 7.5%，其後 15%</td></tr>
+        <tr><td>審計要求</td><td>每年法定審計</td><td>毋須審計</td></tr>
+        <tr><td>經營成本</td><td>較高（周年申報、公司秘書及審計）</td><td>較低，維護簡單</td></tr>
+        <tr><td>形象與融資</td><td>企業形象較佳，較易開戶及取得信貸</td><td>規模形象相對較小</td></tr>
+        <tr><td>適合對象</td><td>業務具規模、重視風險管理、承接企業客戶</td><td>小本經營、自由工作者、初期試業</td></tr>
+      </table>
+    </div>
+    <div class="cmp-note">＊稅率為現行利得稅兩級制。每間公司情況不同，決定前歡迎 WhatsApp 查詢。</div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">PRICING</div>
+      <h2>透明收費</h2>
+      <p>以下為參考價，實際收費按業務量報價 — 歡迎 WhatsApp 索取正式報價</p>
+    </div>
+    <!-- ══════════════════════════════════════════════════
+         TODO(Momo): 收費內容喺 script 入面 PRICING 嗰度改
+         ══════════════════════════════════════════════════ -->
+    <div class="price-grid" id="priceGrid"></div>
+    <div class="price-note">＊價目僅供參考，最終收費以書面報價為準</div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">WHY US</div>
+      <h2>為何選擇 A&amp;T</h2>
+    </div>
+    <div class="grid why-grid">
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2L5 13.5h6L10 22l8-11.5h-6L13 2z"/></svg></div>
+        <h3>回覆迅速</h3>
+        <p>WhatsApp 直接查詢，毋須電郵往返久候。</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9.5L4 20V6z"/><path d="M8.5 10h.01M12 10h.01M15.5 10h.01"/></svg></div>
+        <h3>深入淺出</h3>
+        <p>不堆砌術語，稅務事項以淺白語言解釋清楚。</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></div>
+        <h3>全程網上</h3>
+        <p>文件拍照傳送即可，毋須親身遞交單據。</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20.5c.8-4 3.5-6 7-6s6.2 2 7 6"/></svg></div>
+        <h3>貼身跟進</h3>
+        <p>專人負責跟進你的公司事務，毋須重複交代背景。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>常見問題</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>開有限公司需時多久？需要準備甚麼？</summary>
+        <div class="body">一般一星期內完成。你只需提供公司名稱（中英文）、董事及股東的身份證副本與住址證明，其餘文件由我們準備。</div>
+      </details>
+      <details>
+        <summary>公司規模小，都需要會計服務嗎？</summary>
+        <div class="body">有限公司無論規模大小，法例均要求每年備妥帳目及進行審計。及早整理帳目，年結審計反而更省時省費，因為帳目齊整可大幅減省審計工夫。</div>
+      </details>
+      <details>
+        <summary>報稅 Deadline 是何時？逾期有甚麼後果？</summary>
+        <div class="body">利得稅報稅表由稅務局按公司年結日發出，不同年結日的 Deadline 各有不同。逾期提交可被罰款甚至檢控，交由我們跟進，確保準時遞交。</div>
+      </details>
+      <details>
+        <summary>收費如何計算？</summary>
+        <div class="body">開有限公司為實價 HK$6,500，已包括政府費用（公司註冊費及商業登記費）。會計及審計服務按公司業務量（單據數量、交易複雜程度）報價，確認報價後絕不中途加價。歡迎 WhatsApp 簡述你的公司情況，我們會盡快回覆。</div>
+      </details>
+      <details>
+        <summary>會計理帳需要準備甚麼文件？</summary>
+        <div class="body">主要包括：銀行月結單、租約、薪金及強積金供款紀錄、購銷單據、水電及通訊帳單、貸款或分期合約。毋須自行整理，拍照或掃描傳送給我們即可。</div>
+      </details>
+      <details>
+        <summary>註冊地址服務是甚麼？</summary>
+        <div class="body">即以我們的地址作為貴公司的註冊地址，政府及銀行信件由我們代收，收妥後即時通知你。適合在家營運或不欲公開私人地址的東主。費用為每年 HK$1,200。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <h2>立即 WhatsApp 查詢，即日回覆</h2>
+      <p>簡述你的公司情況（新成立？單據數量？），我們會盡快提供報價</p>
+      <a class="btn js-wa" href="#" target="_blank" rel="noopener">開始 WhatsApp 對話</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <b style="color:#fff;">A&amp;T Consultant Limited</b><br>
+      公司秘書服務由同系持牌信託或公司服務提供者（TCSP）機構提供<br>
+      © 2026 A&amp;T Consultant Limited. All rights reserved.
+    </div>
+    <div class="fine">本網站內容僅供一般參考，並不構成專業意見。閣下應就個別情況諮詢合適之專業人士。</div>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp 查詢">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.5.8 4.9 2.2 6.9L4.5 27l5.4-1.7c1.9 1.1 4 1.6 6.1 1.6 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.6c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-3.2 1 1-3.1-.3-.4c-1.2-1.7-1.9-3.8-1.9-5.9C5.8 9.4 10.4 5 16 5s10.2 4.4 10.2 9.9-4.6 9.7-10.2 9.7zm5.6-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.2 3 1.3 3.2c.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2 .1.6-.1 1.8-.7 2.1-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+  /* ════════════════════════════════════════════════════════
+     設定區：Momo 淨係改呢度就得
+     ════════════════════════════════════════════════════════ */
+
+  const WHATSAPP_NUMBER = "85298877916";
+
+  // 客人撳掣之後，WhatsApp 對話框預先填好嘅第一句
+  const PREFILL_MESSAGE = "你好，想查詢 A&T 開公司／會計報稅服務。";
+
+  // 收費計劃 — 改名、改價、改包咩，改完 refresh 就見到
+  const PRICING = [
+    {
+      plan: "開有限公司",
+      amount: "HK$6,500",
+      unit: "一次性",
+      hot: false,
+      items: ["已包政府費用（註冊費及商業登記費）", "有限公司註冊全套", "商業登記證", "銀行開戶協助", "註冊地址服務 +HK$1,200／年"],
+    },
+    {
+      plan: "會計理帳",
+      amount: "HK$3,000",
+      unit: "起",
+      hot: true,   // hot: true = 金色highlight，放你最想推嗰個plan
+      items: ["無限公司帳目 HK$3,000 起", "有限公司帳目 HK$6,000 起", "按業務量正式報價", "報稅 Deadline 提醒跟進"],
+    },
+    {
+      plan: "審計安排",
+      amount: "HK$4,000",
+      unit: "起",
+      hot: false,
+      items: ["合作執業會計師處理", "有限公司每年法定要求", "配合報稅一站式處理", "按業務量正式報價"],
+    },
+  ];
+
+  /* ══════════ 以下唔使掂 ══════════ */
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(PREFILL_MESSAGE)}`;
+  document.querySelectorAll(".js-wa").forEach(a => a.href = waLink);
+
+  document.getElementById("priceGrid").innerHTML = PRICING.map(p => `
+    <div class="price-card${p.hot ? " hot" : ""}">
+      <div class="plan">${p.plan}</div>
+      <div class="amount">${p.amount} <small>${p.unit}</small></div>
+      <ul>${p.items.map(i => `<li>${i}</li>`).join("")}</ul>
+      <a class="btn btn-gold js-wa" href="${waLink}" target="_blank" rel="noopener">查詢呢個plan</a>
+    </div>`).join("");
+</script>
+
+</body>
+</html>
