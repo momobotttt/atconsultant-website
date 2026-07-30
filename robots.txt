@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atconsultant.com.hk/sitemap.xml
