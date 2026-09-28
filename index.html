@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VRRT71VLGF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VRRT71VLGF');
+</script>
 
 <title>開公司 HK$6,500 全包政府費用｜奧通財稅顧問 A&amp;T Consultant — 香港會計・報稅・公司秘書</title>
 <meta name="description" content="奧通財稅顧問有限公司（A&amp;T Consultant）：香港有限公司註冊 HK$6,500，已包政府註冊費及商業登記費，明碼實價無隱藏收費。會計理帳、利得稅報稅、公司秘書及審計一站式辦妥，服務香港及內地客戶，全程 WhatsApp 專人跟進，最快一星期完成。">
@@ -1039,5 +1047,19 @@
 }
 </script>
 
+
+<script>
+  // GA4 轉換事件：WhatsApp 點擊（主要轉換）、Instagram 點擊
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a');
+    if(!a || typeof gtag !== 'function') return;
+    var href = a.getAttribute('href') || '';
+    if(a.classList.contains('js-wa') || href.indexOf('wa.me') !== -1){
+      gtag('event', 'whatsapp_click', { link_text: (a.textContent||'').trim().slice(0,40) });
+    } else if(href.indexOf('instagram.com') !== -1){
+      gtag('event', 'instagram_click', { link_text: (a.textContent||'').trim().slice(0,40) });
+    }
+  }, true);
+</script>
 </body>
 </html>
